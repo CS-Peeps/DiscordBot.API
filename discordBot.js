@@ -32,7 +32,7 @@ client.on('message', msg => {
 
 	switch(cmd) {
 		// system commands
-		case "ping": return system.ping(msg, client);
+		case 'ping': return system.ping(msg, client);
 		case 'say': return system.say(msg, args);
 		case 'kick': return system.kick(msg, args);
 		case 'ban': return system.ban(msg, args);
