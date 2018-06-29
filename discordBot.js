@@ -48,7 +48,7 @@ client.on('message', msg => {
 
 });
 
-client.login(process.env.SERENITY_BOT);
+client.login(process.env.DISCORD_BOT);
 
 
 
