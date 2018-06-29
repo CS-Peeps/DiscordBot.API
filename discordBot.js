@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const system = require('./controllers/system');
+const crypto = require('./controllers/crypto');
 const steam = require('./controllers/steam');
 
 var prefix = '`';
@@ -37,6 +38,10 @@ client.on('message', msg => {
 		case 'kick': return system.kick(msg, args);
 		case 'ban': return system.ban(msg, args);
 		case 'purge': return system.purge(msg, args);
+		
+		// crypto commands
+		case 'price': return crypto.price(msg, args);
+		case 'priceusd': return crypto.priceusd(msg, args);
 
 		// steam commands
 		case 'link': return steam.link(msg, args);
