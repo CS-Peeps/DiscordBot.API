@@ -1,0 +1,38 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - net
+
+  auditweb:
+    image: node
+    expose:
+      - "3000"
+    user: root
+    working_dir: /discordBot/
+    entrypoint:
+      - npm
+      - start
+    environment:
+      - "NODE_ENV=production"
+      - "PORT=3000"
+      - "DISCORD_BOT=NDU0MTA2MTAxMzcwMTkxODky.Dfru-g.9p7S6vAl8RMyPWB70MCquKwGKco"
+  #  volumes:
+    # - .:/discordBot/
+    networks:
+      - net
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+
+volumes:
+  mongodata:
+
+networks:
+  net:
