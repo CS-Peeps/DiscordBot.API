@@ -9,7 +9,7 @@ services:
     networks:
       - net
 
-  auditweb:
+  discordBot:
     image: node
     expose:
       - "3000"
@@ -17,13 +17,13 @@ services:
     working_dir: /discordBot/
     entrypoint:
       - npm
-      - start
+      - run
+      - production
     environment:
       - "NODE_ENV=production"
       - "PORT=3000"
-      - "DISCORD_BOT=NDU0MTA2MTAxMzcwMTkxODky.Dfru-g.9p7S6vAl8RMyPWB70MCquKwGKco"
-  #  volumes:
-    # - .:/discordBot/
+    volumes:
+      - .:/discordBot/
     networks:
       - net
     depends_on:
