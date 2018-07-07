@@ -5,9 +5,11 @@ pipeline {
       args '-p 8001:3000'
     }
   }
-  stage('Build') {
-    steps {
-      sh 'npm install'
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
     }
   }
 }
