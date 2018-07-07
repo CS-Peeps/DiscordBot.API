@@ -15,6 +15,5 @@ pipeline {
   }
   environment {
     NODE_ENV = 'production'
-    DISCORD_BOT = 'NDU0MzQ5NTE0ODU0MTA1MDg5.DfsJgg.Ce0gLS1AxcWXjFXKxrdcGVivgtE'
   }
 }
