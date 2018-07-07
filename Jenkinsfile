@@ -1,8 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'node:6-alpine'
-      args '-p 8001:3000'
+    node {
+      label 'Start'
     }
 
   }
