@@ -2,5 +2,8 @@ node_modules
 .DS_Store
 /config/config.json
 
+#docker compose
+docker-compose.yml
+
 # Visual Studio Code config folder
 .vscode
