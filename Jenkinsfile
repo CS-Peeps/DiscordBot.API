@@ -18,6 +18,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
+        sh 'npm stop'
         sh 'npm start'
       }
     }

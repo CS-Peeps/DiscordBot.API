@@ -4,7 +4,8 @@
   "description": "Discord Bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "stop": "forever stopall",
+    "start": "forever start index.js --minUpTime=0 ",
     "production": "npm install && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "discord.js": "^11.3.2",
+    "forever": "^0.15.3",
     "mongoose": "^5.1.7",
     "node-binance-api": "^0.7.4"
   }
