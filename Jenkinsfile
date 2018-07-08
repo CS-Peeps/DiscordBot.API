@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''npm install
-npm install -g forever'''
+npm install forever'''
       }
     }
     stage('Deploy') {
