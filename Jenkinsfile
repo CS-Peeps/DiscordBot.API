@@ -14,7 +14,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh './deploy'
+        sh 'npm stop'
+        sh 'npm start'
       }
     }
   }
