@@ -21,6 +21,6 @@ pipeline {
   }
   environment {
     NODE_ENV = 'production'
-    DISCORD_BOT = credentials('Discord Bot api key')
+    DISCORD_BOT = credentials('DISCORD_BOT')
   }
 }
