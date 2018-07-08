@@ -9,12 +9,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh '''npm install
+npm install -g forever'''
       }
     }
     stage('Deploy') {
       steps {
-        sh 'npm start'
+        sh 'forever npm start'
       }
     }
   }
