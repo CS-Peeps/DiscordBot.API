@@ -10,5 +10,3 @@ RUN npm install
 COPY . .
 
 EXPOSE 8001
-
-CMD ["foever", "npm", "start"]
