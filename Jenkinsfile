@@ -1,21 +1,19 @@
 pipeline {
   agent {
-    docker {
-      image 'node'
-      args '-p 8001:3000'
+    dockerfile {
+      filename 'Dockerfile'
     }
 
   }
   stages {
     stage('Build') {
       steps {
-        sh '''npm install
-npm install forever'''
+        sh 'npm install'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'forever npm start'
+        sh 'npm start'
       }
     }
   }
