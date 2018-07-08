@@ -14,8 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'npm stop'
-        sh 'npm start'
+        sh 'docker build -t react-app --no-cache .'
       }
     }
   }
