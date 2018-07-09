@@ -1,36 +1,24 @@
-# Extending image
-FROM node:latest
+FROM node:8.11
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get -y install autoconf automake libtool nasm make pkg-config git apt-utils
+ 
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+COPY package.json package.json
 
-# Versions
-RUN npm -v
-RUN node -v
+COPY package-lock.json package-lock.json
 
-# Install app dependencies
-COPY package.json /usr/src/app/
-COPY package-lock.json /usr/src/app/
+RUN npm install --loglevel=warn
 
-RUN npm install
+ 
 
-# Bundle app source
-COPY . /usr/src/app
+COPY . .
+ 
 
-# Port to listener
-EXPOSE 3000
+EXPOSE 8001:3000
 
-# Environment variables
-ENV NODE_ENV production
-ENV PORT 8001
-ENV PUBLIC_PATH "/"
+ 
 
-RUN npm run start:build
+# Run npm start to start up the app
 
-# Main command
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start" ]
+
+ 
