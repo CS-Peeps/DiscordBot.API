@@ -1,12 +1,12 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'Dockerfile'
+      filename 'Discord Bot'
     }
 
   }
   stages {
-    stage('Build') {
+    stage('Deploy') {
       steps {
         sh 'npm install'
       }
