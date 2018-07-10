@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        writeFile(file: 'config.json', text: 'Hello')
+        writeFile(file: '.config/config.json', text: 'Hello')
         sh 'docker build -t discord .'
       }
     }
