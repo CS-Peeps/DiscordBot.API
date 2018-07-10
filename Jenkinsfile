@@ -1,20 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:8.11.3'
-      args '-p 8001:3000'
-    }
-
-  }
+  agent any
   stages {
-    stage('Build') {
-      steps {
-        sh 'npm install'
-      }
-    }
     stage('Deploy') {
       steps {
-        sh 'docker build -t react-app --no-cache .'
+        sh 'docker build -t discord .'
       }
     }
   }
