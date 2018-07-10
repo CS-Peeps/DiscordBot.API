@@ -1,20 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:8.11'
-      args '-p 8001:3000'
-    }
-
-  }
+  agent any
   stages {
-    stage('Deploy') {
+    stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'docker build -t discord .'
       }
     }
-  }
-  environment {
-    NODE_ENV = 'production'
-    DISCORD_BOT = credentials('DISCORD_BOT')
   }
 }
