@@ -1,9 +1,13 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+
+  }
   stages {
     stage('Deploy') {
       steps {
-        writeFile(file: '.config/config.json', text: 'Hello')
         sh 'docker build -t discord .'
       }
     }
