@@ -15,6 +15,8 @@ COPY . .
 
 EXPOSE 8001:3000
 
+
+ENV NODE_ENV production
  
 
 # Run npm start to start up the app
