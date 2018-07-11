@@ -11,9 +11,6 @@ RUN npm install --loglevel=warn
  
 
 COPY . .
- 
-
-EXPOSE 8001:3000
 
 
 ENV NODE_ENV production
