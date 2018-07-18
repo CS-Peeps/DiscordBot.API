@@ -16,6 +16,6 @@ docker run -p 8099:3000 --name discordbot discord'''
     }
   }
   environment {
-    DISCORD_BOT = 'Hello'
+    DISCORD_BOT = credentials('DISCORD_BOT')
   }
 }
