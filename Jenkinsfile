@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh '''docker rm -f discord || true
+        sh '''docker rm -f discordbot || true
 docker run -d -p 8099:80 --name discordbot discord'''
       }
     }
