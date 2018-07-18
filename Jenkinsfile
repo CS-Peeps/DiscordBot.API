@@ -6,6 +6,7 @@ pipeline {
         sh '''docker build \\
 --build-arg discord_bot=$DISCORD_BOT \\
  -t discord .'''
+        echo '$DISCORD_BOT'
       }
     }
     stage('Deploy') {
