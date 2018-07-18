@@ -3,8 +3,20 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t discord .'
+        sh '''docker build \\
+--build-arg discord_bot=$DISCORD_BOT \\
+ -t discord .'''
+        echo '$DISCORD_BOT'
       }
     }
+    stage('Deploy') {
+      steps {
+        sh '''docker rm -f discordbot || true
+docker run -p 8099:3000 --name discordbot discord'''
+      }
+    }
+  }
+  environment {
+    DISCORD_BOT = ''
   }
 }
