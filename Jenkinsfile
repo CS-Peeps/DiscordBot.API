@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh '''docker rm -f discordbot || true
 docker run -d -p 8099:80 --name discordbot discord'''
+        sleep 30
       }
     }
   }
