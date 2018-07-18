@@ -12,6 +12,8 @@ RUN npm install --loglevel=warn
 
 COPY . .
 
+# Arguments
+ARG discord_bot
 
 ENV NODE_ENV production
 ENV DISCORD_BOT=$discord_bot
