@@ -30,7 +30,8 @@ client.on('message', msg => {
 	const args = parseMessage(msg.content);
 	const cmd = args.shift().toLowerCase();
 
-
+	
+	console.log("Command:", cmd);
 	switch(cmd) {
 		// system commands
 		case 'ping': return system.ping(msg, client);

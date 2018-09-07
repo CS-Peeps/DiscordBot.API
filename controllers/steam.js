@@ -4,7 +4,6 @@ const axios = require('axios');
 
 
 exports.link = async (msg, args) => {
-
 	const userId = msg.author.id;
 	const username = msg.author.username;
 	const steamAccount = args[0];
@@ -13,8 +12,10 @@ exports.link = async (msg, args) => {
 		SteamUser.findByDiscordId(userId).then((account) => {
 			if(!account) {
 				saveAccount(msg, userId, steamAccount, username);
+				console.log("create steam account");
 			} else {
 				updateAccount(msg, steamAccount, account);
+				console.log("update steam account");
 			}
 		}).catch((e) => {
 			console.log(e);

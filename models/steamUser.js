@@ -23,17 +23,6 @@ var SteamUserSchema = mongoose.Schema({
   }
 });
 
-// UserSchema.methods.removeToken = function(token) {
-
-//   var user = this;
-
-//   return user.update({
-//     $pull: {
-//       tokens: {token}
-//     }
-//   });
-// }
-
 SteamUserSchema.statics.findByDiscordId = function(id) {
   var SteamUser = this;
 
