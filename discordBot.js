@@ -53,7 +53,9 @@ client.on('message', msg => {
 
 });
 
-client.login(process.env.DISCORD_BOT);
+client.login(process.env.DISCORD_BOT).catch( e => {
+	console.log("Incorrect discord bot token");
+});
 
 
 
