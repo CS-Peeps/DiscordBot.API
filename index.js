@@ -10,3 +10,4 @@ if(!process.env.DEVELOPMENT_BOT || process.env.DEVELOPMENT_BOT === 'true') {
   } else {
     consoleInfo('Discord Development Bot Disabled');
 }
+require('./db/mongoose'); // setup tables
