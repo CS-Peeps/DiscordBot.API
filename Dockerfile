@@ -9,15 +9,10 @@ COPY package-lock.json package-lock.json
 RUN npm install --loglevel=warn
 
  
-
+EXPOSE 27017:27017
 COPY . .
 
-# Arguments
-ARG discord_bot
-
 ENV NODE_ENV production
-ENV DISCORD_BOT=$discord_bot
- 
 
 # Run npm start to start up the app
 
