@@ -16,7 +16,7 @@ COPY . .
 ARG discord_bot
 
 ENV NODE_ENV production
-ENV DISCORD_BOT=$discord_bot
+ENV MONGODB_URI mongodb://localhost:27017/DiscordBot
  
 
 # Run npm start to start up the app
