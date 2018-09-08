@@ -13,7 +13,7 @@ EXPOSE 27017:27017
 COPY . .
 
 ENV NODE_ENV production
-ENV MONGODB_URI mongodb://localhost:27017/DiscordBot
+ENV MONGODB_URI mongodb://159.89.143.28:27017/DiscordBot
 
 # Run npm start to start up the app
 
