@@ -5,6 +5,7 @@ require('../utils/console.js');
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connection;
+consoleInfo(`Attempting to connect to ${config.mongodb.uri}`);
 
 connectWithRetry = () => {
     return mongoose.connect(config.mongodb.uri).then((res) => {
