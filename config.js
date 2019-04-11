@@ -10,7 +10,7 @@ config.steam = {
 };
 
 config.mongodb = {
-  uri: process.env.MONGODB_URI || "mongodb://localhost:27017/discord-bot"
+  uri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/discord-bot"
 };
 
 module.exports = config;
