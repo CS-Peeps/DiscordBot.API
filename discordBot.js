@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const system = require('./controllers/system');
 const crypto = require('./controllers/crypto');
 const steam = require('./controllers/steam');
+const config = require('./config');
 
 var prefix = '`';
 
@@ -54,7 +55,7 @@ client.on('message', msg => {
 
 });
 
-client.login(process.env.DISCORD_BOT).catch( e => {
+client.login(config.discord.botKey).catch( e => {
 	console.log("Incorrect discord bot token");
 });
 

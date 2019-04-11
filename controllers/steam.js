@@ -1,4 +1,5 @@
 const {SteamUser} = require('../models/steamUser');
+const config = require('../config');
 
 const axios = require('axios');
 
@@ -117,7 +118,7 @@ exports.shuffle = async (msg, args) => {
 
 const getSteamIdFromName = async (user) => {
 
-	const url = `https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/?key=${process.env.STEAM_API_KEY}&format=json&vanityurl=${user}`;
+	const url = `https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/?key=${config.steam.apiKey}&format=json&vanityurl=${user}`;
 	return await axios.get(url).then(res => {
 		return res.data.response.steamid;
 	}).catch(err => {
@@ -132,7 +133,7 @@ const getSteamUser = async (user) => {
 	const userid = await getSteamIdFromName(user);
 
 	if(userid) {
-		const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${process.env.STEAM_API_KEY}&format=json&steamids=${userid}`;
+		const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${config.steam.apiKey}&format=json&steamids=${userid}`;
 		return await axios.get(url)
 		.then(res => {
 			return res.data.response.players[0];
@@ -145,7 +146,7 @@ const getSteamUser = async (user) => {
 };
 
 const getGameList = async (steamid) => {
-	const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${steamid}&format=json`;
+	const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${config.steam.apiKey}&steamid=${steamid}&format=json`;
 	return await axios.get(url).then(res => {
 		return res.data.response.games;
 	}).catch(err => {
@@ -201,7 +202,7 @@ const updateAccount = async (msg, steamAccount, account) => {
 
 const getGameName = async (appid) => {
 
-	const url = `http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${process.env.STEAM_API_KEY}&appid=${appid}`;
+	const url = `http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${config.steam.apiKey}&appid=${appid}`;
 	return await axios.get(url).then(res => {
 		return res.data.game.gameName;
 	}).catch(err => {
