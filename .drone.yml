@@ -6,7 +6,7 @@ steps:
   image: plugins/docker
   settings:
     repo: discord-bot-drone
-    registry: https://registry.strecks.net/
+    registry: https://registry.strecks.net
     auto_tag: true
     dockerfile: Dockerfile
     username:
