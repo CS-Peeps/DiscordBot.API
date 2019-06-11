@@ -5,7 +5,7 @@ steps:
   - name: build
     image: node
     commands:
-      - npm install
+      - docker build -t discord-bot .
     environment:
       NODE_ENV: production
       DISCORD_BOT:
