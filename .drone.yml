@@ -5,12 +5,8 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    repo: discord-bot-drone
+    repo: serenity/discord-bot-drone
     auto_tag: true
-    username:
-      from_secret: DOCKER_USERNAME
-    password:
-      from_secret: DOCKER_PASSWORD
     dockerfile: Dockerfile
   # - name: build
   #   image: node
