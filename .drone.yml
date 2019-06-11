@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: build
+    image: node
+    commands:
+      - npm install
+    environment:
+      NODE_ENV: production
+      DISCORD_BOT:
+        from_secret: discord_bot
+      STEAM_API_KEY:
+        from_secret: steam_api_key
