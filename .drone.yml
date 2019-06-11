@@ -6,6 +6,7 @@ steps:
   image: plugins/docker
   settings:
     repo: discord-bot-drone
+    registry: index.docker.io
     auto_tag: true
     dockerfile: Dockerfile
     password:
