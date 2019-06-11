@@ -9,6 +9,6 @@ steps:
     environment:
       NODE_ENV: production
       DISCORD_BOT:
-        from_secret: discord_bot
+        from_secret: DISCORD_BOT
       STEAM_API_KEY:
-        from_secret: steam_api_key
+        from_secret: STEAM_API_KEY
