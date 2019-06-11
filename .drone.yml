@@ -6,9 +6,11 @@ steps:
   image: plugins/docker
   settings:
     repo: discord-bot-drone
-    registry: index.docker.io
+    registry: https://registry.strecks.net/
     auto_tag: true
     dockerfile: Dockerfile
+    username:
+      from_secret: DOCKER_USERNAME
     password:
       from_secret: DOCKER_PASSWORD
     environment:
@@ -23,3 +25,5 @@ steps:
   #       from_secret: DISCORD_BOT
   #     STEAM_API_KEY:
   #       from_secret: STEAM_API_KEY
+
+  
