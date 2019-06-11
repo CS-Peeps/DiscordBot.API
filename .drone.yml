@@ -2,13 +2,17 @@ kind: pipeline
 name: default
 
 steps:
-  - name: build
-    image: node
-    commands:
-      - docker build -t discord-bot .
-    environment:
-      NODE_ENV: production
-      DISCORD_BOT:
-        from_secret: DISCORD_BOT
-      STEAM_API_KEY:
-        from_secret: STEAM_API_KEY
+- name: docker  
+  image: plugins/docker
+  settings:
+    dockerfile: Dockerfile
+  # - name: build
+  #   image: node
+  #   commands:
+  #     - npm install
+  #   environment:
+  #     NODE_ENV: production
+  #     DISCORD_BOT:
+  #       from_secret: DISCORD_BOT
+  #     STEAM_API_KEY:
+  #       from_secret: STEAM_API_KEY
