@@ -7,9 +7,9 @@ steps:
   settings:
     repo: discord-bot-drone
     auto_tag: true
-    password:
-      from_secret: DOCKER_PASSWORD
     dockerfile: Dockerfile
+    environment:
+      PLUGIN_DEBUG: true
   # - name: build
   #   image: node
   #   commands:
