@@ -5,6 +5,7 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
+    repo: discord-bot-drone
     dockerfile: Dockerfile
   # - name: build
   #   image: node
