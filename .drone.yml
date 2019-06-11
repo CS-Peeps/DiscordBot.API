@@ -6,6 +6,11 @@ steps:
   image: plugins/docker
   settings:
     repo: discord-bot-drone
+    auto_tag: true
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
     dockerfile: Dockerfile
   # - name: build
   #   image: node
