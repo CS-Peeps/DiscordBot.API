@@ -15,7 +15,6 @@ steps:
       from_secret: DOCKER_PASSWORD
     environment:
       PLUGIN_DEBUG: true
-- name: run
-  image: alpine
-  commands:
-    - docker service update discord-bot
+  trigger:
+    status:
+    - success
