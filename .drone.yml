@@ -15,15 +15,6 @@ steps:
       from_secret: DOCKER_PASSWORD
     environment:
       PLUGIN_DEBUG: true
-  # - name: build
-  #   image: node
-  #   commands:
-  #     - npm install
-  #   environment:
-  #     NODE_ENV: production
-  #     DISCORD_BOT:
-  #       from_secret: DISCORD_BOT
-  #     STEAM_API_KEY:
-  #       from_secret: STEAM_API_KEY
-
-  
+- name: swarm
+  commands:
+    - docker service update discord-bot
