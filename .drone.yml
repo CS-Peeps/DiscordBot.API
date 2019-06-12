@@ -15,9 +15,7 @@ steps:
       from_secret: DOCKER_PASSWORD
     environment:
       PLUGIN_DEBUG: true
-- name: run
-  image: docker
-  commands:
+deploy:  
+  bash:
+    script:
     - docker service update discord-bot
-  volume:
-    - /var/run/docker.sock:/var/run/docker.sock
