@@ -15,7 +15,10 @@ steps:
       from_secret: DOCKER_PASSWORD
     environment:
       PLUGIN_DEBUG: true
-  - deploy:  
-      bash:
-        script:
-        - docker service update discord-bot
+- name: run
+  image: docker:dind
+  volume:
+    - /var/run
+  commands:
+    - sleep 5
+    - docker service update discord-bot
