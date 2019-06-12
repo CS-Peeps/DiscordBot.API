@@ -22,3 +22,15 @@ steps:
   commands:
     - sleep 5
     - docker service update discord-bot
+
+services:
+- name: docker
+  image: docker:dind
+  privileged: true
+  volumes:
+  - name: dockersock
+    path: /var/run
+
+volumes:
+- name: dockersock
+  temp: {}
