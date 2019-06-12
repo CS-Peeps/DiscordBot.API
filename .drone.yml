@@ -17,20 +17,14 @@ steps:
       PLUGIN_DEBUG: true
 - name: run
   image: docker:dind
-  volume:
-    - /var/run
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
   commands:
     - sleep 5
     - docker service update discord-bot
 
-services:
-- name: docker
-  image: docker:dind
-  privileged: true
-  volumes:
-  - name: dockersock
-    path: /var/run
-
 volumes:
 - name: dockersock
-  temp: {}
+  host:
+    path: /var/run/docker.sock
