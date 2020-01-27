@@ -42,8 +42,8 @@ client.on('message', msg => {
 		case 'purge': return system.purge(msg, args);
 		
 		// crypto commands
-		case 'price': return crypto.price(msg, args);
-		case 'priceusd': return crypto.priceusd(msg, args);
+		// case 'price': return crypto.price(msg, args);
+		// case 'priceusd': return crypto.priceusd(msg, args);
 
 		// steam commands
 		case 'link': return steam.link(msg, args);
