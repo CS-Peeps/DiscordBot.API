@@ -16,3 +16,10 @@ jobs:
       run: echo ${{ secrets.REGISTRY_PASSWORD }} | docker login -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin ${{ secrets.REGISTRY_URL }}
     - name: Push the Docker image
       run: docker push ${{ secrets.REGISTRY_URL }}/yenser/discord-bot
+    - name: restart application
+      uses: satak/webrequest-action@master
+      with:
+        url: ${{ secrets.WEBHOOK_URL }}/service/production/yenser/discord-bot
+        method: POST
+        username: ${{ secrets.WEBHOOK_USERNAME }}
+        password: ${{ secrets.WEBHOOK_PASSWORD }}
