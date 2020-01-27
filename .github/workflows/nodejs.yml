@@ -27,10 +27,9 @@ jobs:
         docker build --no-cache -t yenser/discord-bot .
     - name: Push Docker Container to Registry
       env:
-        CONTAINER_IMAGE_NAME: yenser/discord-bot
         REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
         REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }} 
         REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }} 
       run:
-        docker login -u $REGISTRY_USERNAME -p REGISTRY_PASSWORD $REGISTRY_URL
-        docker push $REGISTRY_URL/yenser/discord-bot:latest
+        docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD $REGISTRY_URL;
+        docker push $REGISTRY_URL/yenser/discord-bot:latest;
