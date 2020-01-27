@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run:
-        npm ci
-      env:
-        CI: true
+#     - name: npm install
+#       run:
+#         npm ci
+#       env:
+#         CI: true
     - name: Building Docker Image
       run:
         docker build --no-cache -t yenser/discord-bot .
