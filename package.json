@@ -13,7 +13,7 @@
   "author": "Jens Streck, Joe Woznicki",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "discord.js": "^11.5.1",
     "mongoose": "^5.8.10",
     "node-binance-api": "^0.10.0"
